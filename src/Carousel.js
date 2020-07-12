@@ -9,8 +9,13 @@ import EyesSlide from "./Slides/Eyes";
 import CurlyStraightSlide from "./Slides/CurlyStraight";
 import EyebrowsSlide from "./Slides/Eyebrows";
 import BigHeadSlide from "./Slides/BigHead";
+import WelcomeSlide from "./Slides/Welcome";
+import HopeAndDreamsSlide from "./Slides/HopesAndDreams";
+import AdviceSlide from "./Slides/Advice";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BookSlide from "./Slides/Books";
+import RegistrySlide from "./Slides/Registry";
 
 function Carousel() {
   const slider = createRef(null);
@@ -35,6 +40,7 @@ function Carousel() {
       className="h-screen w-screen striped items-center justify-center"
       ref={slider}
     >
+      <WelcomeSlide nextSlide={nextSlide} />
       <BirthdayCard nextSlide={nextSlide} />
       <BirthtimeSlide nextSlide={nextSlide} />
       <WeightSlide nextSlide={nextSlide} />
@@ -44,6 +50,10 @@ function Carousel() {
       <CurlyStraightSlide nextSlide={nextSlide} />
       <EyebrowsSlide nextSlide={nextSlide} />
       <BigHeadSlide nextSlide={nextSlide} />
+      <HopeAndDreamsSlide nextSlide={nextSlide} />
+      <AdviceSlide nextSlide={nextSlide} />
+      <BookSlide nextSlide={nextSlide} />
+      <RegistrySlide />
     </Slider>
   );
 }

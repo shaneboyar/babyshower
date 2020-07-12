@@ -9,7 +9,7 @@ const FallingCard = ({ xPos, yPos, portrait = false, picture }) => {
     rot: -25 + Math.random() * 50,
     delay: 1000,
   };
-  const from = { x: xPos, rot: 0, scale: 1.5, y: -1000 };
+  const from = { x: xPos, rot: 0, scale: 1.5, y: -2000 };
   const trans = (r, s) =>
     `perspective(1500px) rotateX(30deg) rotateY(${
       r / 10
@@ -34,7 +34,9 @@ const FallingCard = ({ xPos, yPos, portrait = false, picture }) => {
         backgroundImage: `url(${picture})`,
         backgroundSize: "cover",
       }}
-      className={`${portrait ? "h-64 w-48" : "h-48 w-64"} absolute shadow-md`}
+      className={`${
+        portrait ? "portrait" : "landscape"
+      } photo absolute shadow-md`}
     />
   );
 };

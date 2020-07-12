@@ -1,53 +1,67 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { useWindowSize } from "@react-hook/window-size";
-import Slider from "@material-ui/core/Slider";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { teal } from "@material-ui/core/colors";
 import { withStyles } from "@material-ui/core/styles";
 import steph from "../pictures/steph-christmas.JPG";
 import shane from "../pictures/shane-megan.JPG";
 import FallingCard from "../FallingCard";
 
-function convertRange(value, r1, r2) {
-  return ((value - r1[0]) * (r2[1] - r2[0])) / (r1[1] - r1[0]) + r2[0];
-}
-
-const getValueText = (value) => {
-  const weight = Math.floor(convertRange(value, [0, 100], [96, 192]));
-  console.log("getValueText -> weight", weight);
-  const pounds = Math.floor(weight / 16);
-  const ounces = weight % 16;
-  return `${pounds}lbs ${ounces}oz`;
-};
-
-const CustomSlider = withStyles({
-  valueLabel: {
-    top: -22,
-    "& *": {
-      background: "transparent",
-      color: "#000",
-      width: "5rem",
-      fontSize: "1rem",
+const CustomRadio = withStyles({
+  root: {
+    color: teal[400],
+    "&$checked": {
+      color: teal[600],
     },
   },
-})(Slider);
+  checked: {},
+})((props) => <Radio color="default" {...props} />);
+
+const CustomControl = withStyles({
+  label: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    color: teal[500],
+  },
+})((props) => <FormControlLabel {...props} />);
 
 const SlideContent = ({ nextSlide }) => {
   const [value, onChange] = useState();
   return (
     <div className="flex w-full flex-col items-center justify-between space-y-6 z-10">
-      <h1 className="font-sans font-bold text-6xl text-teal-500 text-center text-glow">
-        What color hair will he have?
+      <h1 className="font-sans font-bold text-5xl text-teal-500 text-center text-glow">
+        What color eyes will he have?
       </h1>
       <div className="w-64">
-        <CustomSlider
-          valueLabelFormat={getValueText}
-          aria-labelledby="discrete-slider-always"
-          step={1}
-          valueLabelDisplay="on"
-          value={value}
-          defaultValue={50}
+        <RadioGroup
+          aria-label="eyeColor"
+          name="eyeColor"
           onChange={(e) => onChange(e.target.value)}
-        />
+        >
+          <CustomControl
+            value="Blue"
+            control={<CustomRadio value="Blue" />}
+            label="Blue"
+          />
+          <CustomControl
+            value="brown"
+            control={<CustomRadio />}
+            label="Brown"
+          />
+          <CustomControl
+            value="Green"
+            control={<CustomRadio />}
+            label="Green"
+          />
+          <CustomControl
+            value="Hazel"
+            control={<CustomRadio />}
+            label="Hazel"
+          />
+        </RadioGroup>
       </div>
       <button
         onClick={nextSlide}
@@ -69,8 +83,8 @@ const EyesSlide = ({ nextSlide }) => {
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <div className="flex w-full h-full items-center justify-center absolute z-0">
-        <FallingCard xPos={-(width / 8)} yPos={0} picture={steph} />
-        <FallingCard xPos={width / 8} yPos={0} picture={shane} />
+        <FallingCard xPos={-(width / 4)} yPos={0} picture={steph} />
+        <FallingCard xPos={width / 4} yPos={0} picture={shane} />
       </div>
       <SlideContent nextSlide={nextSlide} />
     </div>
