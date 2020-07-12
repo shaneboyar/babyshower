@@ -39,6 +39,7 @@ function Carousel() {
       {...settings}
       className="h-screen w-screen striped items-center justify-center"
       ref={slider}
+      lazyLoad
     >
       <WelcomeSlide nextSlide={nextSlide} />
       <BirthdayCard nextSlide={nextSlide} />
