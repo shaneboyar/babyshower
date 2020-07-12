@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import classNames from "classnames";
+import React, { useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import Slider from "@material-ui/core/Slider";
 import { withStyles } from "@material-ui/core/styles";
@@ -32,7 +31,7 @@ const CustomSlider = withStyles({
 })(Slider);
 
 const SlideContent = ({ nextSlide }) => {
-  const [value, setValue] = useState("9lbs 0oz");
+  const [, setValue] = useState("9lbs 0oz");
   return (
     <div className="flex w-full flex-col items-center justify-between space-y-6 z-10">
       <h1 className="font-sans font-bold text-5xl text-teal-500 text-center text-glow">
@@ -58,7 +57,7 @@ const SlideContent = ({ nextSlide }) => {
 };
 
 const WeightSlide = ({ nextSlide }) => {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">

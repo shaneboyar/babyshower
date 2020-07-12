@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import classNames from "classnames";
+import React from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import { Typography } from "@material-ui/core";
 import deck1 from "../pictures/deck1.jpg";
 import deck2 from "../pictures/deck2.jpg";
 import deck3 from "../pictures/deck3.jpg";

@@ -61,7 +61,7 @@ const SlideContent = ({ nextSlide }) => {
 };
 
 const LengthSlide = ({ nextSlide }) => {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">

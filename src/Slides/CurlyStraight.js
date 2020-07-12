@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 import { useWindowSize } from "@react-hook/window-size";
 import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
@@ -54,7 +53,7 @@ const SlideContent = ({ nextSlide }) => {
 };
 
 const CurlyStraightSlide = ({ nextSlide }) => {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
