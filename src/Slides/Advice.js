@@ -4,14 +4,14 @@ const SlideContent = ({ nextSlide }) => {
   const [advice, onadviceChange] = useState();
 
   return (
-    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
-      <h1 className="text-teal-500 text-5xl font-black text-glow uppercase">
+    <div className="flex w-full flex-col container items-center justify-between px-4 space-y-4 md:space-y-6 z-10">
+      <h1 className="text-teal-500 text-5xl text-center font-black text-glow uppercase">
         Any advice for the parents?
       </h1>
       <textarea
         value={advice}
         onChange={(e) => onadviceChange(e.target.value)}
-        className="form-textarea mt-1 block w-1/2 h-64 shadow-md"
+        className="form-textarea mt-1 block w-full md:w-1/2 h-64 shadow-md"
       />
       <button
         onClick={nextSlide}
@@ -25,7 +25,7 @@ const SlideContent = ({ nextSlide }) => {
 
 const AdviceSlide = ({ nextSlide }) => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <SlideContent nextSlide={nextSlide} />
     </div>
   );

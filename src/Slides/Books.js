@@ -3,7 +3,7 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const SlideContent = ({ nextSlide }) => {
   const [book, onbookChange] = useState();
-  const [books, setBooks] = useState(["Book"]);
+  const [books, setBooks] = useState([]);
 
   const addBook = () => {
     setBooks((state) => state.concat(book));
@@ -20,17 +20,18 @@ const SlideContent = ({ nextSlide }) => {
 
   const removeBook = (index) => {
     setBooks((state) => {
-      state.splice(index, 1);
-      setBooks(state);
+      const stateCopy = [...state];
+      stateCopy.splice(index, 1);
+      setBooks(stateCopy || []);
     });
   };
 
   return (
-    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
-      <h1 className="text-teal-500 text-5xl font-black text-glow uppercase">
+    <div className="flex w-full flex-col container items-center justify-between px-4 space-y-4 md:space-y-6 z-10">
+      <h1 className="text-teal-500 text-3xl md:text-5xl text-center font-black text-glow uppercase max-w-full">
         Book recommendations for the baby:
       </h1>
-      <div className="flex flex-row w-1/2 justify-between space-x-4">
+      <div className="flex flex-row w-full md:w-1/2 justify-between space-x-4">
         <input
           value={book}
           onChange={(e) => onbookChange(e.target.value)}
@@ -48,17 +49,18 @@ const SlideContent = ({ nextSlide }) => {
         style={{ maxHeight: "16rem" }}
         className="flex flex-col flex-wrap w-1/2"
       >
-        {books.map((book, index) => (
-          <div className="flex flex-row items-center">
-            <CloseIcon
-              className="cursor-pointer"
-              onClick={() => removeBook(index)}
-            />
-            <h3 className="text-teal-500 text-2xl font-bold text-glow uppercase ml-4">
-              {book}
-            </h3>
-          </div>
-        ))}
+        {books &&
+          books.map((book, index) => (
+            <div className="flex flex-row items-center">
+              <CloseIcon
+                className="cursor-pointer"
+                onClick={() => removeBook(index)}
+              />
+              <h3 className="text-teal-500 text-2xl font-bold text-glow uppercase ml-4">
+                {book}
+              </h3>
+            </div>
+          ))}
       </div>
       <button
         onClick={nextSlide}
@@ -72,7 +74,7 @@ const SlideContent = ({ nextSlide }) => {
 
 const BookSlide = ({ nextSlide }) => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <SlideContent nextSlide={nextSlide} />
     </div>
   );

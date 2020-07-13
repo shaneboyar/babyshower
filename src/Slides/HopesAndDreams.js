@@ -9,8 +9,8 @@ const SlideContent = ({ nextSlide }) => {
   const [remember, onRememberChange] = useState();
 
   return (
-    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
-      <h1 className="text-teal-500 text-5xl font-black text-glow uppercase">
+    <div className="flex w-full flex-col container items-center justify-between px-4 space-y-4 md:space-y-6 z-10">
+      <h1 className="text-teal-500 text-5xl text-center font-black text-glow uppercase">
         Hopes and dreams for the baby
       </h1>
       <TextField
@@ -18,35 +18,35 @@ const SlideContent = ({ nextSlide }) => {
         value={learn}
         onChange={(e) => onLearnChange(e.target.value)}
         variant="outlined"
-        className="bg-white w-1/2"
+        className="bg-white w-full md:w-1/2"
       />
       <TextField
         label="I hope you become:"
         value={become}
         onChange={(e) => onBecomeChange(e.target.value)}
         variant="outlined"
-        className="bg-white w-1/2"
+        className="bg-white w-full md:w-1/2"
       />
       <TextField
         label="I hope you love:"
         value={love}
         onChange={(e) => onLoveChange(e.target.value)}
         variant="outlined"
-        className="bg-white w-1/2"
+        className="bg-white w-full md:w-1/2"
       />
       <TextField
         label="I hope you laugh:"
         value={laugh}
         onChange={(e) => onLaughChange(e.target.value)}
         variant="outlined"
-        className="bg-white w-1/2"
+        className="bg-white w-full md:w-1/2"
       />
       <TextField
         label="I hope you remember:"
         value={remember}
         onChange={(e) => onRememberChange(e.target.value)}
         variant="outlined"
-        className="bg-white w-1/2"
+        className="bg-white w-full md:w-1/2"
       />
       <button
         onClick={nextSlide}
@@ -60,7 +60,7 @@ const SlideContent = ({ nextSlide }) => {
 
 const HopeAndDreamsSlide = ({ nextSlide }) => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <SlideContent nextSlide={nextSlide} />
     </div>
   );

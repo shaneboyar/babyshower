@@ -54,7 +54,7 @@ const EyebrowsSlide = ({ nextSlide }) => {
   const [width] = useWindowSize();
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
         <FallingCard xPos={-(width / 4)} yPos={0} picture={steph} />
         <FallingCard xPos={width / 4} yPos={0} picture={shane} portrait />

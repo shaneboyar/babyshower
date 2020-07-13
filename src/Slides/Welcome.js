@@ -30,6 +30,14 @@ const SlideContent = ({ nextSlide }) => {
       >
         ENTER
       </button>
+      <button
+        onClick={() => {
+          window.location = "https://babylist.com/boyar";
+        }}
+        className="bg-white text-teal-300 font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 border-teal-300 border-2"
+      >
+        VISIT REGISTRY
+      </button>
     </div>
   );
 };
@@ -38,8 +46,8 @@ const WelcomeSlide = ({ nextSlide }) => {
   const [width, height] = useWindowSize();
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <div className="hidden md:hidden md:flex w-full h-full items-center justify-center absolute z-0">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
+      <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
         <FallingCard xPos={-(width / 3)} yPos={0} picture={deck1} portrait />
         <FallingCard xPos={0} yPos={-(height / 3)} picture={deck2} portrait />
         <FallingCard xPos={width / 3} yPos={0} picture={deck3} portrait />

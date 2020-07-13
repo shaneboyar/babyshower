@@ -30,7 +30,7 @@ const RegistrySlide = ({ nextSlide }) => {
   const [width, height] = useWindowSize();
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
         <FallingCard xPos={-(width / 3)} yPos={0} picture={stroller} portrait />
         <FallingCard xPos={0} yPos={-(height / 3)} picture={porch} />
