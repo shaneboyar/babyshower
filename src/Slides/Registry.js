@@ -1,6 +1,6 @@
 import React from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import stroller from "../pictures/stroller.jpg";
+import stroller from "../pictures/stroller.JPG";
 import nursery from "../pictures/nursery.jpg";
 import porch from "../pictures/porch.JPG";
 import FallingCard from "../FallingCard";
