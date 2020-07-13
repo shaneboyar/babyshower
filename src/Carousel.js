@@ -1,4 +1,5 @@
 import React, { createRef, useCallback } from "react";
+import isMobile from "is-mobile";
 import Slider from "react-slick";
 import BirthdayCard from "./Slides/Birthday";
 import BirthtimeSlide from "./Slides/Birthtime";
@@ -9,6 +10,7 @@ import EyesSlide from "./Slides/Eyes";
 import CurlyStraightSlide from "./Slides/CurlyStraight";
 import EyebrowsSlide from "./Slides/Eyebrows";
 import BigHeadSlide from "./Slides/BigHead";
+import MobileImageSlide from "./Slides/MobileImageSlide";
 import WelcomeSlide from "./Slides/Welcome";
 import HopeAndDreamsSlide from "./Slides/HopesAndDreams";
 import AdviceSlide from "./Slides/Advice";
@@ -43,6 +45,12 @@ function Carousel() {
       lazyLoad
     >
       <WelcomeSlide nextSlide={nextSlide} />
+      {isMobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/deck2.jpg")}
+        />
+      )}
       <BirthdayCard nextSlide={nextSlide} />
       <BirthtimeSlide nextSlide={nextSlide} />
       <WeightSlide nextSlide={nextSlide} />
