@@ -33,8 +33,8 @@ const CustomSlider = withStyles({
 const SlideContent = ({ nextSlide }) => {
   const [value, setValue] = useState('20.0"');
   return (
-    <div className="flex w-full flex-col items-center justify-between space-y-6 z-10">
-      <h1 className="font-sans font-bold text-5xl text-teal-500 text-center text-glow">
+    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
+      <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
         How long will he be?
       </h1>
       <div className="w-64">
@@ -65,7 +65,7 @@ const LengthSlide = ({ nextSlide }) => {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
-      <div className="flex w-full h-full items-center justify-center absolute z-0">
+      <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
         <FallingCard xPos={-(width / 4)} yPos={0} picture={stephdad} />
         <FallingCard xPos={width / 4} yPos={0} picture={shanedad} />
       </div>

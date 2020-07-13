@@ -1,13 +1,13 @@
 import React from "react";
 import { useWindowSize } from "@react-hook/window-size";
-import stroller from "../pictures/stroller.JPG";
+import stroller from "../pictures/stroller.jpg";
 import nursery from "../pictures/nursery.jpg";
 import porch from "../pictures/porch.JPG";
 import FallingCard from "../FallingCard";
 
 const SlideContent = ({ nextSlide }) => {
   return (
-    <div className="flex w-full flex-col items-center justify-between space-y-6 z-10">
+    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1
         align="center"
         className="text-teal-500 text-5xl font-black text-glow uppercase"
@@ -31,7 +31,7 @@ const RegistrySlide = ({ nextSlide }) => {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
-      <div className="flex w-full h-full items-center justify-center absolute z-0">
+      <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
         <FallingCard xPos={-(width / 3)} yPos={0} picture={stroller} portrait />
         <FallingCard xPos={0} yPos={-(height / 3)} picture={porch} />
         <FallingCard xPos={width / 3} yPos={0} picture={nursery} portrait />

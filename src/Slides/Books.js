@@ -26,7 +26,7 @@ const SlideContent = ({ nextSlide }) => {
   };
 
   return (
-    <div className="flex w-full flex-col items-center justify-between space-y-6 z-10">
+    <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-5xl font-black text-glow uppercase">
         Book recommendations for the baby:
       </h1>
