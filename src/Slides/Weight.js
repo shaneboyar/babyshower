@@ -3,7 +3,7 @@ import { useWindowSize } from "@react-hook/window-size";
 import Slider from "@material-ui/core/Slider";
 import { withStyles } from "@material-ui/core/styles";
 import stephmom from "../pictures/steph-mom.JPG";
-import shanemom from "../pictures/shane-mom.JPG";
+import shanemom from "../pictures/shane-born.JPG";
 import FallingCard from "../FallingCard";
 
 function convertRange(value, r1, r2) {

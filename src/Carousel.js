@@ -19,6 +19,8 @@ import "slick-carousel/slick/slick-theme.css";
 import BookSlide from "./Slides/Books";
 import RegistrySlide from "./Slides/Registry";
 
+const mobile = isMobile();
+
 function Carousel() {
   const slider = createRef(null);
   var settings = {
@@ -45,21 +47,141 @@ function Carousel() {
       lazyLoad
     >
       <WelcomeSlide nextSlide={nextSlide} />
-      {isMobile && (
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/deck1.jpg")}
+        />
+      )}
+      {mobile && (
         <MobileImageSlide
           nextSlide={nextSlide}
           image={require("./pictures/deck2.jpg")}
         />
       )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/deck3.jpg")}
+        />
+      )}
       <BirthdayCard nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-cake.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-cake.JPG")}
+        />
+      )}
       <BirthtimeSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-car.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-car.JPG")}
+        />
+      )}
       <WeightSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-born.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-mom.JPG")}
+        />
+      )}
       <LengthSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-dad.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-dad.JPG")}
+        />
+      )}
       <HairSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-flowers.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-beach.JPG")}
+        />
+      )}
       <EyesSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-christmas.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-megan.JPG")}
+        />
+      )}
       <CurlyStraightSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-paint.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-lauren.JPG")}
+        />
+      )}
       <EyebrowsSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-dodgers.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-grandpa.JPG")}
+        />
+      )}
       <BigHeadSlide nextSlide={nextSlide} />
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/steph-crawl.JPG")}
+        />
+      )}
+      {mobile && (
+        <MobileImageSlide
+          nextSlide={nextSlide}
+          image={require("./pictures/shane-mom.JPG")}
+        />
+      )}
       <HopeAndDreamsSlide nextSlide={nextSlide} />
       <AdviceSlide nextSlide={nextSlide} />
       <BookSlide nextSlide={nextSlide} />
