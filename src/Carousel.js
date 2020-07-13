@@ -20,6 +20,7 @@ import BookSlide from "./Slides/Books";
 import RegistrySlide from "./Slides/Registry";
 
 const mobile = isMobile();
+console.log("mobile", mobile);
 
 function Carousel() {
   const slider = createRef(null);

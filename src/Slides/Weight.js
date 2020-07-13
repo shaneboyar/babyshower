@@ -48,9 +48,9 @@ const SlideContent = ({ nextSlide }) => {
       </div>
       <button
         onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64"
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg"
       >
-        Submit
+        Next
       </button>
     </div>
   );
@@ -62,8 +62,8 @@ const WeightSlide = ({ nextSlide }) => {
   return (
     <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
       <div className="hidden md:flex w-full h-full items-center justify-center absolute z-0">
-        <FallingCard xPos={-(width / 4)} yPos={0} picture={stephmom} />
-        <FallingCard xPos={width / 4} yPos={0} picture={shanemom} portrait />
+        <FallingCard xPos={-(width / 3.5)} yPos={0} picture={stephmom} />
+        <FallingCard xPos={width / 3.5} yPos={0} picture={shanemom} portrait />
       </div>
       <SlideContent nextSlide={nextSlide} />
     </div>

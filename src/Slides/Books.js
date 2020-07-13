@@ -64,9 +64,9 @@ const SlideContent = ({ nextSlide }) => {
       </div>
       <button
         onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700"
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
       >
-        Submit
+        Next
       </button>
     </div>
   );
