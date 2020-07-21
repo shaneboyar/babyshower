@@ -26,12 +26,12 @@ const SlideContent = ({ nextSlide }) => {
         Guess the most correct answers and receive a prize from the
         parents-to-be!
       </p>
-      <div className="flex flex-row items-center space-x-4">
+      <div className="flex flex-row w-3/4 flex-wrap justify-center items-center sm:space-x-2">
         <input
           placeholder="Your Name Here"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="form-input w-64 flex-grow block shadow-md"
+          className="form-input w-64 block shadow-md"
         />
         <button
           onClick={() => nextSlide({ name })}
