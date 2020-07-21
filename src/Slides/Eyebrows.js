@@ -22,7 +22,7 @@ const CustomSwitch = withStyles({
 })(Switch);
 
 const SlideContent = ({ nextSlide }) => {
-  const [value, handleChange] = useState("Yes");
+  const [eyebrows, handleChange] = useState("Yes");
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
@@ -33,16 +33,18 @@ const SlideContent = ({ nextSlide }) => {
           Yes
         </h5>
         <CustomSwitch
-          checked={value === "No"}
-          onChange={(checked) => handleChange(value === "Yes" ? "No" : "Yes")}
+          checked={eyebrows === "No"}
+          onChange={(checked) =>
+            handleChange(eyebrows === "Yes" ? "No" : "Yes")
+          }
         />
         <h5 className="font-sans font-bold text-xl text-teal-500 text-center text-glow">
           No
         </h5>
       </div>
       <button
-        onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
+        onClick={() => nextSlide({ eyebrows })}
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
       >
         Next
       </button>

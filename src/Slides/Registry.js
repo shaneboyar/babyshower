@@ -4,8 +4,9 @@ import stroller from "../pictures/stroller.JPG";
 import nursery from "../pictures/nursery.jpg";
 import porch from "../pictures/porch.JPG";
 import FallingCard from "../FallingCard";
+import { useEffect } from "react";
 
-const SlideContent = ({ nextSlide }) => {
+const SlideContent = () => {
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1
@@ -26,8 +27,12 @@ const SlideContent = ({ nextSlide }) => {
   );
 };
 
-const RegistrySlide = ({ nextSlide }) => {
+const RegistrySlide = ({ submitResponses }) => {
   const [width, height] = useWindowSize();
+
+  useEffect(() => {
+    submitResponses();
+  }, [submitResponses]);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center pb-32 md:pb-0">
@@ -36,7 +41,7 @@ const RegistrySlide = ({ nextSlide }) => {
         <FallingCard xPos={0} yPos={-(height / 3)} picture={porch} />
         <FallingCard xPos={width / 3} yPos={0} picture={nursery} portrait />
       </div>
-      <SlideContent nextSlide={nextSlide} />
+      <SlideContent />
     </div>
   );
 };

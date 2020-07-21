@@ -29,7 +29,7 @@ const CustomControl = withStyles({
 })((props) => <FormControlLabel {...props} />);
 
 const SlideContent = ({ nextSlide }) => {
-  const [value, onChange] = useState();
+  const [hairColor, onChange] = useState();
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
@@ -61,10 +61,10 @@ const SlideContent = ({ nextSlide }) => {
         </RadioGroup>
       </div>
       <button
-        onClick={nextSlide}
-        disabled={!value}
+        onClick={() => nextSlide({ hairColor })}
+        disabled={!hairColor}
         className={classNames(
-          !value ? "opacity-50 cursor-not-allowed" : "hover:bg-teal-700",
+          !hairColor ? "opacity-50 cursor-not-allowed" : "hover:bg-teal-700",
           "bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg"
         )}
       >

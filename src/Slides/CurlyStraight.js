@@ -22,7 +22,7 @@ const CustomSwitch = withStyles({
 })(Switch);
 
 const SlideContent = ({ nextSlide }) => {
-  const [value, handleChange] = useState("Curly");
+  const [curlyStraight, handleChange] = useState("Curly");
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
@@ -33,9 +33,9 @@ const SlideContent = ({ nextSlide }) => {
           Curly
         </h5>
         <CustomSwitch
-          checked={value === "Straight"}
+          checked={curlyStraight === "Straight"}
           onChange={(checked) =>
-            handleChange(value === "Curly" ? "Straight" : "Curly")
+            handleChange(curlyStraight === "Curly" ? "Straight" : "Curly")
           }
         />
         <h5 className="font-sans font-bold text-xl text-teal-500 text-center text-glow">
@@ -43,8 +43,8 @@ const SlideContent = ({ nextSlide }) => {
         </h5>
       </div>
       <button
-        onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
+        onClick={() => nextSlide({ curlyStraight })}
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
       >
         Next
       </button>

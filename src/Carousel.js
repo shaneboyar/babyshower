@@ -18,11 +18,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BookSlide from "./Slides/Books";
 import RegistrySlide from "./Slides/Registry";
+import { firestore } from "firebase";
+import { useState } from "react";
 
 const mobile = isMobile();
 console.log("mobile", mobile);
 
 function Carousel() {
+  const [responses, setResponses] = useState({});
   const slider = createRef(null);
   var settings = {
     dots: false,
@@ -34,11 +37,19 @@ function Carousel() {
     swipe: false,
   };
 
-  const nextSlide = useCallback(() => {
-    if (slider.current) {
-      slider.current.slickNext();
-    }
-  }, [slider]);
+  const nextSlide = useCallback(
+    (responseObject) => {
+      if (slider.current) {
+        setResponses((state) => ({ ...state, ...responseObject }));
+        slider.current.slickNext();
+      }
+    },
+    [slider]
+  );
+
+  const submitResponses = () => {
+    firestore().collection("responses").add(responses);
+  };
 
   return (
     <Slider
@@ -186,7 +197,7 @@ function Carousel() {
       <HopeAndDreamsSlide nextSlide={nextSlide} />
       <AdviceSlide nextSlide={nextSlide} />
       <BookSlide nextSlide={nextSlide} />
-      <RegistrySlide />
+      <RegistrySlide submitResponses={submitResponses} />
     </Slider>
   );
 }

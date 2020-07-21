@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import deck1 from "../pictures/deck1.jpg";
 import deck2 from "../pictures/deck2.jpg";
@@ -6,6 +6,8 @@ import deck3 from "../pictures/deck3.jpg";
 import FallingCard from "../FallingCard";
 
 const SlideContent = ({ nextSlide }) => {
+  const [name, setName] = useState();
+
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10 rounded-lg">
       <h1
@@ -24,12 +26,20 @@ const SlideContent = ({ nextSlide }) => {
         Guess the most correct answers and receive a prize from the
         parents-to-be!
       </p>
-      <button
-        onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
-      >
-        ENTER
-      </button>
+      <div className="flex flex-row items-center space-x-4">
+        <input
+          placeholder="Your Name Here"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="form-input w-64 flex-grow block shadow-md"
+        />
+        <button
+          onClick={() => nextSlide({ name })}
+          className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
+        >
+          ENTER
+        </button>
+      </div>
       <button
         onClick={() => {
           window.location = "https://babylist.com/boyar";

@@ -31,7 +31,7 @@ const CustomSlider = withStyles({
 })(Slider);
 
 const SlideContent = ({ nextSlide }) => {
-  const [, setValue] = useState("9lbs 0oz");
+  const [weight, setValue] = useState("9lbs 0oz");
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
@@ -47,7 +47,7 @@ const SlideContent = ({ nextSlide }) => {
         />
       </div>
       <button
-        onClick={nextSlide}
+        onClick={() => nextSlide({ weight })}
         className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg"
       >
         Next

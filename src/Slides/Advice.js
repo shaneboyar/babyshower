@@ -14,8 +14,8 @@ const SlideContent = ({ nextSlide }) => {
         className="form-textarea mt-1 block w-full md:w-1/2 h-64 shadow-md"
       />
       <button
-        onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
+        onClick={() => nextSlide({ advice })}
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
       >
         Next
       </button>

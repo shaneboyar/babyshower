@@ -31,14 +31,18 @@ const CustomToggle = withStyles({
 })((props) => <ToggleButton {...props} />);
 
 const SlideContent = ({ nextSlide }) => {
-  const [value, handleChange] = useState();
+  const [bigHead, handleChange] = useState();
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10">
       <h1 className="text-teal-500 text-3xl md:text-5xl font-black text-center text-glow">
         Will he have a big head, big ears, or both?
       </h1>
       <div className="w-64 flex flex-row items-center justify-center">
-        <ToggleButtonGroup value={value} exclusive aria-label="text alignment">
+        <ToggleButtonGroup
+          value={bigHead}
+          exclusive
+          aria-label="text alignment"
+        >
           <CustomToggle
             onClick={(e) => {
               e.preventDefault();
@@ -72,8 +76,8 @@ const SlideContent = ({ nextSlide }) => {
         </ToggleButtonGroup>
       </div>
       <button
-        onClick={nextSlide}
-        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg hover:bg-teal-700 shadow-lg"
+        onClick={() => nextSlide({ bigHead: bigHead || "No Answer" })}
+        className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
       >
         Next
       </button>
