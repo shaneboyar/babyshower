@@ -61,7 +61,7 @@ const SlideContent = ({ nextSlide }) => {
         </RadioGroup>
       </div>
       <button
-        onClick={() => nextSlide({ hairColor })}
+        onClick={() => nextSlide({ hairColor: hairColor || "No Answer" })}
         disabled={!hairColor}
         className={classNames(
           !hairColor ? "opacity-50 cursor-not-allowed" : "hover:bg-teal-700",

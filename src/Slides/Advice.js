@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const SlideContent = ({ nextSlide }) => {
-  const [advice, onadviceChange] = useState();
+  const [advice, onadviceChange] = useState("");
 
   return (
     <div className="flex w-full flex-col container items-center justify-between px-4 space-y-4 md:space-y-6 z-10">

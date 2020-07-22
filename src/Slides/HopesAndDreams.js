@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 
 const SlideContent = ({ nextSlide }) => {
-  const [learn, onLearnChange] = useState();
-  const [become, onBecomeChange] = useState();
-  const [love, onLoveChange] = useState();
-  const [laugh, onLaughChange] = useState();
-  const [remember, onRememberChange] = useState();
+  const [learn, onLearnChange] = useState("");
+  const [become, onBecomeChange] = useState("");
+  const [love, onLoveChange] = useState("");
+  const [laugh, onLaughChange] = useState("");
+  const [remember, onRememberChange] = useState("");
 
   return (
     <div className="flex w-full flex-col container items-center justify-between px-4 space-y-4 md:space-y-6 z-10">
