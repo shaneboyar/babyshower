@@ -13,7 +13,6 @@ function convertRange(value, r1, r2) {
 
 const getValueText = (value, setValue) => {
   const length = convertRange(value, [0, 100], [16, 24]);
-  console.log("getValueText -> length", length);
   setValue(`${length.toFixed(1)}"`);
   return `${length.toFixed(1)}"`;
 };

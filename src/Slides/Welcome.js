@@ -6,7 +6,7 @@ import deck3 from "../pictures/deck3.jpg";
 import FallingCard from "../FallingCard";
 
 const SlideContent = ({ nextSlide }) => {
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
 
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10 rounded-lg">

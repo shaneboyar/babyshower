@@ -18,8 +18,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BookSlide from "./Slides/Books";
 import RegistrySlide from "./Slides/Registry";
-import { firestore } from "firebase";
 import { useState } from "react";
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 
 const mobile = isMobile();
 console.log("mobile", mobile);
@@ -48,7 +49,7 @@ function Carousel() {
   );
 
   const submitResponses = () => {
-    firestore().collection("responses").add(responses);
+    firebase.firestore().collection("responses").add(responses);
   };
 
   return (
