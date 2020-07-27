@@ -15,7 +15,6 @@ const SlideContent = ({ nextSlide }) => {
       <TextField
         id="date"
         type="date"
-        defaultValue="2017-05-24"
         InputLabelProps={{
           shrink: true,
         }}

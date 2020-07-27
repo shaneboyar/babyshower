@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
 const SlideContent = ({ nextSlide }) => {
-  const [book, onbookChange] = useState();
+  const [book, onbookChange] = useState("");
   const [books, setBooks] = useState([]);
 
   const addBook = () => {
@@ -51,7 +51,7 @@ const SlideContent = ({ nextSlide }) => {
       >
         {books &&
           books.map((book, index) => (
-            <div className="flex flex-row items-center">
+            <div key={index} className="flex flex-row items-center">
               <CloseIcon
                 className="cursor-pointer"
                 onClick={() => removeBook(index)}
