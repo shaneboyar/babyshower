@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import deck1 from "../pictures/deck1.jpg";
 import deck2 from "../pictures/deck2.jpg";
@@ -7,6 +7,11 @@ import FallingCard from "../FallingCard";
 
 const SlideContent = ({ nextSlide }) => {
   const [name, setName] = useState("");
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    name && setError(false);
+  }, [name]);
 
   return (
     <div className="flex w-full flex-col container items-center justify-between space-y-4 md:space-y-6 z-10 rounded-lg">
@@ -31,11 +36,19 @@ const SlideContent = ({ nextSlide }) => {
           placeholder="Your Name Here"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="form-input w-64 block shadow-md"
+          className={`form-input w-64 block shadow-md ${
+            error ? "border-red-600 border-4" : ""
+          }`}
         />
         <button
-          onClick={() => nextSlide({ name })}
-          className="bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
+          onClick={() => {
+            !name ? setError(true) : nextSlide({ name });
+          }}
+          className={
+            !name
+              ? "bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 shadow-lg outline-none focus:outline-none"
+              : "bg-teal-300 text-white font-bold py-2 px-4 rounded w-64 hover:bg-teal-700 shadow-lg"
+          }
         >
           ENTER
         </button>
